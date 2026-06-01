@@ -1,5 +1,6 @@
 let conta = 0
 let pessoas = 0
+let porcentagem = 0
 
 const contaInput = document.querySelector("#conta")
 contaInput.addEventListener("Input", receberValorConta)
@@ -43,7 +44,13 @@ function receberPorcentagemBotao(evento) {
 
         if(botao.value === evento.target.value) {
             botao.classList.add("botao-ativo")
-        }
+        }  if(evento.target.value !== "") {
+        porcentagem = parseFloat(evento.target.value) / 100
+    } else {
+        porcentagem = 0
+    }
+
+    console.log(porcentagem)
     })
 
     porcentagem = parseFloat(evento.target.value) / 100
